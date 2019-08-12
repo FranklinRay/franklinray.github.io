@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
 <meta name="keywords" content="Java,编程，程序员，时序数据库">
-<meta property="og:type" content="website">
-<meta property="og:title" content="二进制的枯燥生活">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HBase集群性能监控">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/HBase集群性能监控/index.html">
 <meta property="og:site_name" content="二进制的枯燥生活">
+<meta property="og:description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-08-12T13:10:42.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二进制的枯燥生活">
+<meta name="twitter:title" content="HBase集群性能监控">
+<meta name="twitter:description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/12/HBase集群性能监控/">
 
 
 
 
 
-  <title>二进制的枯燥生活</title>
+  <title>HBase集群性能监控 | 二进制的枯燥生活</title>
   
 
 
@@ -141,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -247,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/12/HBase集群性能监控/" itemprop="url">HBase集群性能监控</a></h1>
+          <h1 class="post-title" itemprop="name headline">HBase集群性能监控</h1>
         
 
         <div class="post-meta">
@@ -299,14 +300,10 @@
       
 
       
-        
-          
-            <h2 id="HBase自身监控，配合Hadoop以及Ganglia"><a href="#HBase自身监控，配合Hadoop以及Ganglia" class="headerlink" title="HBase自身监控，配合Hadoop以及Ganglia"></a>HBase自身监控，配合Hadoop以及Ganglia</h2><p>总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示<br><br><a href="https://www.tuicool.com/articles/zQNrM3" target="_blank" rel="noopener">性能监控 方法1</a><br><br><a href="https://blog.bcmeng.com/post/hbase-monitor.html" target="_blank" rel="noopener">集群构建</a></p>
+        <h2 id="HBase自身监控，配合Hadoop以及Ganglia"><a href="#HBase自身监控，配合Hadoop以及Ganglia" class="headerlink" title="HBase自身监控，配合Hadoop以及Ganglia"></a>HBase自身监控，配合Hadoop以及Ganglia</h2><p>总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示<br><br><a href="https://www.tuicool.com/articles/zQNrM3" target="_blank" rel="noopener">性能监控 方法1</a><br><br><a href="https://blog.bcmeng.com/post/hbase-monitor.html" target="_blank" rel="noopener">集群构建</a></p>
 <hr>
 <h2 id="HBase部署Docker化"><a href="#HBase部署Docker化" class="headerlink" title="HBase部署Docker化"></a>HBase部署Docker化</h2><p>HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现<br><br><a href="https://zhuanlan.zhihu.com/p/57739371" target="_blank" rel="noopener">性能监控 方法2</a></p>
 
-          
-        
       
     </div>
     
@@ -323,133 +320,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/定时监控Linux-CPU-MEM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lei">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="二进制的枯燥生活">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/12/定时监控Linux-CPU-MEM/" itemprop="url">定时监控Linux CPU  MEM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T09:04:19+08:00">
-                2019-08-12
-              </time>
+              <a href="/2019/08/12/定时监控Linux-CPU-MEM/" rel="next" title="定时监控Linux CPU  MEM">
+                <i class="fa fa-chevron-left"></i> 定时监控Linux CPU  MEM
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">pid=<span class="variable">$1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$pid</span></span><br><span class="line">interval=5</span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> $(date +<span class="string">"%y-%m-%d %H:%M:%S"</span>) &gt;&gt; proc_memlog.txt</span><br><span class="line">    cat  /proc/<span class="variable">$pid</span>/status|grep -e VmRSS &gt;&gt; proc_memlog.txt    <span class="comment">#获取内存占用</span></span><br><span class="line">    cpu=`pidstat -p <span class="variable">$pid</span> | awk <span class="string">'NR==4&#123;pinrt $8&#125;'</span>`    <span class="comment">#获取cpu占用</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Cpu: "</span> <span class="variable">$cpu</span> &gt;&gt; proc_memlog.txt</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$blank</span> &gt;&gt; proc_memlog.txt</span><br><span class="line">    sleep <span class="variable">$interval</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -459,10 +351,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -470,6 +363,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -490,8 +387,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -533,6 +439,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase自身监控，配合Hadoop以及Ganglia"><span class="nav-number">1.</span> <span class="nav-text">HBase自身监控，配合Hadoop以及Ganglia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase部署Docker化"><span class="nav-number">2.</span> <span class="nav-text">HBase部署Docker化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -673,6 +595,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
