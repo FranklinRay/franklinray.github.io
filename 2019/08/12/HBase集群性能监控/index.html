@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
+<meta name="description" content="HBase自身监控，配合Hadoop以及GangliaHBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。性能监控 方法1集群构建Ganglia与HBase、Hadoop集成架构如下图所示 AmbriAmbri是用于简化Hadoop集群的安">
 <meta name="keywords" content="Java,编程，程序员，时序数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HBase集群性能监控">
 <meta property="og:url" content="http://yoursite.com/2019/08/12/HBase集群性能监控/index.html">
 <meta property="og:site_name" content="二进制的枯燥生活">
-<meta property="og:description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
+<meta property="og:description" content="HBase自身监控，配合Hadoop以及GangliaHBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。性能监控 方法1集群构建Ganglia与HBase、Hadoop集成架构如下图所示 AmbriAmbri是用于简化Hadoop集群的安">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-12T13:10:42.911Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/13/oUaLTpJw9KB3eCA.png">
+<meta property="og:updated_time" content="2019-08-13T10:22:02.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HBase集群性能监控">
-<meta name="twitter:description" content="HBase自身监控，配合Hadoop以及Ganglia总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示性能监控 方法1集群构建  HBase部署Docker化HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现性能监控 方法2">
+<meta name="twitter:description" content="HBase自身监控，配合Hadoop以及GangliaHBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。性能监控 方法1集群构建Ganglia与HBase、Hadoop集成架构如下图所示 AmbriAmbri是用于简化Hadoop集群的安">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/13/oUaLTpJw9KB3eCA.png">
 
 
 
@@ -300,9 +302,49 @@
       
 
       
-        <h2 id="HBase自身监控，配合Hadoop以及Ganglia"><a href="#HBase自身监控，配合Hadoop以及Ganglia" class="headerlink" title="HBase自身监控，配合Hadoop以及Ganglia"></a>HBase自身监控，配合Hadoop以及Ganglia</h2><p>总结来说就是HBase Hadoop自带状态监控metric, 通过Rpc, Ganglia可以获取metric，然后展示<br><br><a href="https://www.tuicool.com/articles/zQNrM3" target="_blank" rel="noopener">性能监控 方法1</a><br><br><a href="https://blog.bcmeng.com/post/hbase-monitor.html" target="_blank" rel="noopener">集群构建</a></p>
-<hr>
+        <h2 id="HBase自身监控，配合Hadoop以及Ganglia"><a href="#HBase自身监控，配合Hadoop以及Ganglia" class="headerlink" title="HBase自身监控，配合Hadoop以及Ganglia"></a>HBase自身监控，配合Hadoop以及Ganglia</h2><p>HBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。<br><br><a href="https://www.tuicool.com/articles/zQNrM3" target="_blank" rel="noopener">性能监控 方法1</a><br><br><a href="http://blog.itpub.net/30089851/viewspace-2126299/" target="_blank" rel="noopener">集群构建</a><br><br>Ganglia与HBase、Hadoop集成架构如下图所示<br><img src="https://i.loli.net/2019/08/13/oUaLTpJw9KB3eCA.png" alt="Ganglia-Hadoop-HBase"></p>
+<h2 id="Ambri"><a href="#Ambri" class="headerlink" title="Ambri"></a>Ambri</h2><p>Ambri是用于简化Hadoop集群的安装、管理、监控以及运维等工作。与CDH的cloudera-manager非常类似。有一套完整的Web界面，用于管理运维。但是，需要重新部署集群，也需要对hbase进行重新打包。</p>
 <h2 id="HBase部署Docker化"><a href="#HBase部署Docker化" class="headerlink" title="HBase部署Docker化"></a>HBase部署Docker化</h2><p>HBase通过k8s进行部署管理，所有的监控通过k8s提供的组件进行实现<br><br><a href="https://zhuanlan.zhihu.com/p/57739371" target="_blank" rel="noopener">性能监控 方法2</a></p>
+<h2 id="三类监控方式对比"><a href="#三类监控方式对比" class="headerlink" title="三类监控方式对比"></a>三类监控方式对比</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ganglia<br>（原生RPC配合第三方监控）</td>
+<td>非侵入式部署<br>对集群影响较小，部署方便<br>可监控参数较多</td>
+<td>目前没有内置的消息通知系统，需要二次开发<br></td>
+</tr>
+<tr>
+<td>Ambari<br>（采用第三方集成系统）</td>
+<td>界面功能丰富，比较直观<br>有提醒功能</td>
+<td>无法兼容已经部署的集群<br> hadoop以及hbase组件需要打包为rpm包</td>
+</tr>
+<tr>
+<td>K8s<br>（Docker化部署，监控二次开发）</td>
+<td>与应用业务流程相似，便于运维<br>便于对资源进行控制</td>
+<td>无法兼容已经部署的集群<br> docker化改造比较复杂<br> 需要考虑k8s集群的稳定性<br> 监控部分需要进行一定的二次开发</td>
+</tr>
+</tbody></table>
+<h2 id="HBase关键监控参数"><a href="#HBase关键监控参数" class="headerlink" title="HBase关键监控参数"></a>HBase关键监控参数</h2><h3 id="节点参数"><a href="#节点参数" class="headerlink" title="节点参数"></a>节点参数</h3><ul>
+<li>HMaster BackMaster 以及 HRegionServer的存活情况</li>
+<li>CPU </li>
+<li>内存 </li>
+<li>网络IO </li>
+<li>磁盘IO<h3 id="HBase-RegionServer参数"><a href="#HBase-RegionServer参数" class="headerlink" title="HBase RegionServer参数"></a>HBase RegionServer参数</h3></li>
+<li>写请求数</li>
+<li>读请求数</li>
+<li>storefile合并次数以及大小</li>
+<li>region数量以及大小</li>
+<li>region分裂请求次数以及成功次数</li>
+<li>JVM的GC以及内存相关参数</li>
+</ul>
+<p><br><a href="https://www.cnblogs.com/fengzzi/p/10033728.html" target="_blank" rel="noopener">HBASE监控参数</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="监控方案"><a href="#监控方案" class="headerlink" title="监控方案"></a>监控方案</h3><p>从个人角度而言，如果愿意对集群进行重新规划部署，选用Ambri或者类似方案是可以接受的。但是风险在于这种开源的复杂系统在出现问题时很难快速进行定位，甚至出现定位之后无法也无法进行修复。<br><br>如果打算在现有集群上进行监控的改善，我更倾向于选用Ganglia配合HBase原生RPC进行监控。相比较HBase Master Web来说，Ganglia能展示节点本身的状况，也可以记录历史数据。对于排查问题更具有参考价值。针对Ganglia无法提示报警的问题，可以考虑二次开发或者用其他监控工具，如Grafana等对获取的RPC数据结构进行解析和包装（这样会导致工作量增加，不过也是一种可行的思路）<br><br>对于Docker化方案，参考上述连接所提供的知乎案例，个人以为方案并不成熟且工作量较大。暂时不推荐采用这种方案。</p>
+<h3 id="监控参数"><a href="#监控参数" class="headerlink" title="监控参数"></a>监控参数</h3><p>个人推荐的监控参数按照重要程度已经在 <strong>HBase关键监控参数</strong> 一节说明。最重要的是在HBase节点有宕机的情况下第一时间邮件或其他方式进行通知。公司HBase所遇到的大部分故障，我们认为应该都是由于内存不足引起。因此，内存也是非常重要的监控内容。HBase集群响应时间增加可能会由于节点的CPU，各种IO等因素引起，但是目前尚未发现，需要集群监控来记录历史数据进行比对。<br><br>HBase应用本身的参数对于集群优化和业务优化有很好的参考价值。读写请求的数量以及请求完成时间可以很好反应集群当前负载状况。由于频繁写入大量带来的compaction以及region的分裂有可能是造成部分请求超时甚至节点宕机的因素。最后JVM的所带来的频繁GC同样也对HBase各个节点会造成影响。<br>从个人角度而言，目前可以从宏观角度基本可以解释HBase节点宕机原因。更深入的参数监控可以辅助我们对HBase有更好的理解。</p>
 
       
     </div>
@@ -449,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase自身监控，配合Hadoop以及Ganglia"><span class="nav-number">1.</span> <span class="nav-text">HBase自身监控，配合Hadoop以及Ganglia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase部署Docker化"><span class="nav-number">2.</span> <span class="nav-text">HBase部署Docker化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase自身监控，配合Hadoop以及Ganglia"><span class="nav-number">1.</span> <span class="nav-text">HBase自身监控，配合Hadoop以及Ganglia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ambri"><span class="nav-number">2.</span> <span class="nav-text">Ambri</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase部署Docker化"><span class="nav-number">3.</span> <span class="nav-text">HBase部署Docker化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三类监控方式对比"><span class="nav-number">4.</span> <span class="nav-text">三类监控方式对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase关键监控参数"><span class="nav-number">5.</span> <span class="nav-text">HBase关键监控参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#节点参数"><span class="nav-number">5.1.</span> <span class="nav-text">节点参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase-RegionServer参数"><span class="nav-number">5.2.</span> <span class="nav-text">HBase RegionServer参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监控方案"><span class="nav-number">6.1.</span> <span class="nav-text">监控方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控参数"><span class="nav-number">6.2.</span> <span class="nav-text">监控参数</span></a></li></ol></li></ol></div>
             
 
           </div>
