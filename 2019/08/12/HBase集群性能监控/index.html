@@ -88,7 +88,7 @@
 <meta property="og:description" content="HBase自身监控，配合Hadoop以及GangliaHBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。性能监控 方法1集群构建Ganglia与HBase、Hadoop集成架构如下图所示 AmbriAmbri是用于简化Hadoop集群的安">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://i.loli.net/2019/08/13/oUaLTpJw9KB3eCA.png">
-<meta property="og:updated_time" content="2019-08-13T10:22:02.236Z">
+<meta property="og:updated_time" content="2019-08-13T10:35:24.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HBase集群性能监控">
 <meta name="twitter:description" content="HBase自身监控，配合Hadoop以及GangliaHBase Hadoop本身提供了对Ganglia的接口，通过对Hadoop以及HBase提供的metrics.properties配置文件进行修改，并重启集群。Ganglia可以通过RPC服务获取各类监控参数。性能监控 方法1集群构建Ganglia与HBase、Hadoop集成架构如下图所示 AmbriAmbri是用于简化Hadoop集群的安">
@@ -321,7 +321,7 @@
 <tr>
 <td>Ambari<br>（采用第三方集成系统）</td>
 <td>界面功能丰富，比较直观<br>有提醒功能</td>
-<td>无法兼容已经部署的集群<br> hadoop以及hbase组件需要打包为rpm包</td>
+<td>可能由于组件版本问题难以兼容已经部署集群<br> hadoop以及hbase组件需要打包为rpm包</td>
 </tr>
 <tr>
 <td>K8s<br>（Docker化部署，监控二次开发）</td>
